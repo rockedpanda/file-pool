@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+	<h1>当前文件</h1>
+	<ul><% list.forEach(x =>{ %>
+		<li><span><%=x.name +'   '+(x.timestring||'') %></span><a href="JavaScript://" data-href="<%=x.filepath%>">预览</a><a href="<%=x.filepath%>">下载</a></li>
+	<% }); %>
+	</ul>
+		<h1>上传文件</h1>
+		<form action="/upload" method="POST" enctype="multipart/form-data">
+		  选择文件:
+		  <input type="file" name="file"> 
+		  <input type="submit" value="上传文件">
+		</form>	
+	</div>
+</body>
+	<script type="text/javascript" src="/public/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
+</html>
